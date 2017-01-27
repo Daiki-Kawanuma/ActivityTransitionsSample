@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ActivityTransitionSample.DetailPage" Title="DetailPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Image x:Name="Image" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Opacity="0"/>
+			<StackLayout x:Name="StackLayout" Opacity="0.3">
+				<Label Text="Activity Transitions Sample"/>
+				<Label Text="AbsoluteBounds is got from Effects"/>
+				<Label Text="Image duration 450ms"/>
+				<Label Text="StackLayout duration 500ms"/>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

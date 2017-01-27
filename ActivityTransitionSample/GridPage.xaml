@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     x:Class="ActivityTransitionSample.GridPage" 
+		     Title="GridPage">
+	<ContentPage.Content>
+		<ListView x:Name="ListView"
+				  ItemsSource="{Binding ImageModels}"
+                  CachingStrategy="RecycleElement"
+                  HasUnevenRows="True">
+        	<ListView.ItemTemplate>
+          		<DataTemplate>
+            		<ViewCell>
+						<Grid ColumnSpacing="3"
+							  RowSpacing="3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Image x:Name="ImageRight"
+								   Grid.Column="0"
+								   HeightRequest="170"
+								   Source="{Binding RightImageUrl}"
+								   Aspect="AspectFill">
+								   <Image.GestureRecognizers>
+        					       	<TapGestureRecognizer Tapped="OnImageClicked"/>
+    					           </Image.GestureRecognizers>
+								   <Image.Effects>
+        					       	<Effect x:FactoryMethod="Resolve" >
+            					    	<x:Arguments>
+                					    	<x:String>Santea.ViewAbsoluteBoundsEffect</x:String>
+            					        </x:Arguments>
+        					        </Effect>
+    					           </Image.Effects>
+							</Image>
+							<Image x:Name="ImageLeft"
+								   Grid.Column="1"
+								   HeightRequest="170"
+								   Source="{Binding LeftImageUrl}"
+								   Aspect="AspectFill">
+								   <Image.GestureRecognizers>
+        					       	<TapGestureRecognizer Tapped="OnImageClicked"/>
+    					           </Image.GestureRecognizers>
+								   <Image.Effects>
+        					       	<Effect x:FactoryMethod="Resolve" >
+            					    	<x:Arguments>
+                					    	<x:String>Santea.ViewAbsoluteBoundsEffect</x:String>
+            					        </x:Arguments>
+        					        </Effect>
+    					           </Image.Effects>
+							</Image>
+						</Grid>
+					</ViewCell>
+          		</DataTemplate>
+        	</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
